@@ -1,0 +1,10 @@
+# OSX
+*.DS_Store
+
+# Java
+*.class
+
+# IntelliJ
+.idea
+*.iml
+
