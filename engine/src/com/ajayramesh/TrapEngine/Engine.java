@@ -53,20 +53,23 @@ public class Engine extends JFrame
         while (isRunning)
         {
             double time = Time.currentTimeMs();
+            /* If the elapsed time between updates is greater than 1s, skip to the next frame */
             if (time - lastTime > 1000.0D) {
                 lastTime = time;
             }
+            /* Elapsed time between updates divided by the update interval provides updatesNeeded */
             int updatesNeeded = (int)(time - lastTime) / this.UPDATE_INTERVAL;
             for (int i = 0; i < updatesNeeded; i++)
             {
                 update();
-
+                /* Increment the lastTime by the UPDATE_INTERVAL so that the elapsed time increases */
                 lastTime += this.UPDATE_INTERVAL;
             }
             double frameStart = Time.currentTimeMs();
             draw(frameStart);
             if (this.CAP_FRAMERATE)
             {
+                /* Length of how long each frame should be  - the length of the latest frame */
                 double delay = 1000 / this.FRAMERATE_CAP - (Time.currentTimeMs() - frameStart);
                 if (delay > 0.0D) {
                     try
@@ -76,6 +79,7 @@ public class Engine extends JFrame
                     catch (Exception localException) {}
                 }
             }
+            /* 1 Second  / time it took current frame to render */
             System.out.println("FPS: " + 1.0D / (Time.currentTimeMs() / 1000.0D - frameStart / 1000.0D));
         }
         setVisible(false);
@@ -93,7 +97,6 @@ public class Engine extends JFrame
         bbg.setColor(Color.BLACK);
         bbg.fillRect(0, 0, this.WIN_W, this.WIN_H);
         this.world.draw(bbg);
-
         g.drawImage(this.backBuffer, this.insets.left, this.insets.right, this);
     }
 }
