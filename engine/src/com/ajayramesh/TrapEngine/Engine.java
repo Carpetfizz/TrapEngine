@@ -66,7 +66,7 @@ public class Engine extends JFrame
                 lastTime += this.UPDATE_INTERVAL;
             }
             double frameStart = Time.currentTimeMs();
-            draw(frameStart);
+            draw();
             if (this.CAP_FRAMERATE)
             {
                 /* Length of how long each frame should be  - the length of the latest frame */
@@ -90,7 +90,7 @@ public class Engine extends JFrame
         this.world.update();
     }
 
-    void draw(double frameStart)
+    void draw()
     {
         Graphics g = getGraphics();
         Graphics bbg = this.backBuffer.getGraphics();
