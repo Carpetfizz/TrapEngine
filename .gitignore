@@ -3,6 +3,7 @@
 
 # Java
 *.class
+META-INF
 
 # IntelliJ
 .idea

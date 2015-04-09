@@ -10,9 +10,8 @@ public class World
 
     void update()
     {
-        for (int i = 0; i < this.Entities.size(); i++)
+        for (Entity e:Entities)
         {
-            Entity e = (Entity)this.Entities.get(i);
             if (e.enabled) {
                 e.update(this.input);
             }
@@ -21,8 +20,8 @@ public class World
 
     void draw(Graphics bbg)
     {
-        for (int j = 0; j < this.Entities.size(); j++) {
-            ((Entity)this.Entities.get(j)).draw(bbg);
+        for (Entity e:Entities) {
+            e.draw(bbg);
         }
     }
 
