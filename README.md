@@ -3,6 +3,8 @@ An attempt to write a 2D game engine in Java from scratch.
 
 ![Call this a game?](http://i.imgur.com/2bS7GvG.gif)
 
+[Download Baller.jar](https://github.com/Carpetfizz/TrapEngine/blob/master/demos/Baller/out/artifacts/Baller_jar/Baller.jar) to check out the demo. 
+
 ## Features
 * Fixed ticks
 
