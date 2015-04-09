@@ -3,6 +3,8 @@ An attempt to write a 2D game engine in Java from scratch.
 
 ![Call this a game?](http://i.imgur.com/2bS7GvG.gif)
 
+*Started from the trap now I rap - 2Chainz*
+
 ## Features
 * Fixed ticks
 
