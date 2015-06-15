@@ -23,6 +23,11 @@ public class LogLevel
         return name;
     }
 
+    public String toString()
+    {
+        return getName();
+    }
+
     public int getPriority()
     {
         return priority;
